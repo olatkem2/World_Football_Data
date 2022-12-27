@@ -8,19 +8,19 @@ My second attempt at an analytics engineering can be found [World GDP Estimates]
 
 ## Implementation and Configuration of Virtual Environment, dbt core, dbt project, git initialization and VS code
 
-1. Create a virtual environment - python -m venv dbt-football-data-env
+1. Create a virtual environment, this is after installing the venv module - python -m venv dbt-football-data-env
 2. Activate the virtual environment - dbt-football-data-env\Scripts\activate (For windows)
 3. Install dbt from the source(due to dependencies issue) by cloning the dbt core from github - git clone https://github.com/dbt-labs/dbt-core.git
 4. cd into dbt-core - cd dbt-core
 5. Install dbt using the equirements.txt file - pip install -r requirements.txt
-6. Change directory to the initial folder - cd..
+6. Change directory to the initial folder. This is needed bacause it is best practice to version control only your working folders NOT the virtual environment - cd..
 7. Initialize a new dbt project by using - dbt init dbt_project_name
 8. Confirm dbt is working by checking its version using - dbt --version
 9. Work on your profiles.yml file to configure and map database and account credentials
 10. Change directory into the new initialized project - cd dbt_project_name
 11. Check if dbt is working as expected by running - dbt debug You should see "All checks passed"
 12. Try - dbt run and - dbt test to confirm you can now start working on your project.
-13. Initialize git using - git init
+13. Initialize git in dbt_project_name using - git init
 14. Stage all changes and commit with message
 15. You can also publish to your preferred git vendor
 16. Adjust VS code settings so dbt can accommodate the jinja-sql format - key: *.sql  value: jinja-sql  Search for "Association"
@@ -53,4 +53,4 @@ I will not cover the installation and config steps for the listed tools as I hav
 ## Challenges
 
 1. I had to work on the profiles.yml file specifically for postgres. I was getting the credentials right but, I had to change METHOD to 'trust' in the hba.config file for psql via notepad and restart its postgresx64 services via run app(service.msc)
-2. Had issues with navigating the file directory of the profiles.yml file and dbt_project.yml file on the command line - I had to just brush up my CLI Knowledge
+2. Had issues with navigating the file directory of the profiles.yml file and dbt_project.yml file on the command line - I had to just brush CLI basics
