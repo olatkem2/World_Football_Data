@@ -3,7 +3,7 @@ A Modern Data Stack project with the aim of building and configuring a data pipe
 
 This is the third side-project that I am using to solidify my understanding of the Modern Data Stack and the Analytics Engineering Space.
 
-My second attempt at an analytics engineering can be found [World GDP Estimates](https://github.com/olatkem2/World-GDP-Estimates) where I scrapped GDP Data from Wikipedia and built a Data Pipeline that ingested data from google sheets to Postgres and from Postgres to Bigquery using Airbyte in Docker. DBT Cloud for transformations, git for Version Control and Power BI for delivery insights. If you need help on this tools, you can check out the this link [YML Fashion Hub](https://github.com/olatkem2/YML-Fashion-Hub---dbt-project)
+My second attempt at an analytics engineering can be found [World GDP Estimates](https://github.com/olatkem2/World-GDP-Estimates) where I scrapped GDP Data from Wikipedia and built a Data Pipeline that ingested data from google sheets to Postgres and from Postgres to Bigquery using Airbyte in Docker. DBT Cloud for transformations, git for Version Control and Power BI for deliverying insights. If you need help on this tools, you can check out the this link [YML Fashion Hub](https://github.com/olatkem2/YML-Fashion-Hub---dbt-project)
 
 
 ## Implementation and Configuration of Virtual Environment, dbt core, dbt project, git initialization and VS code
@@ -37,8 +37,8 @@ The dataset is composed of multiple CSV files loaded into Google sheet with info
 
 1. Docker: This is the local version container that will house our Airbyte's Extract and Load solutions/App.
 2. Airbyte: The Open source version that we will use to extract and load data from source to destination.
-3. Google Sheets: This is our Data source which is also scrapped data from the web.
-4. PG Admin and Postgres: This will serve as an intermediate source to our destination.
+3. Google Sheets: This is our Data source
+4. PG Admin and Postgres: This will serve as our destination.
 5. dbt Core: This is our development, test, deployment, documentation, transformation, modelling and scheduling tool for our models.
 6. Git and Github: This is our version control tool to enable collaboration and seamless CI[continuous Integration].
 7. VS Code: This is our Integrated Development Environment, IDE where we can easily make changes to a cloned branch of our project,commit and merge.
@@ -53,4 +53,4 @@ I will not cover the installation and config steps for the listed tools as I hav
 ## Challenges
 
 1. I had to work on the profiles.yml file specifically for postgres. I was getting the credentials right but, I had to change METHOD to 'trust' in the hba.config file for psql via notepad and restart its postgresx64 services via run app(service.msc)
-2. Had issues with navigating the file directory of the profiles.yml file and dbt_project.yml file on the command line - I had to0 just brush up my CLI Knowledge
+2. Had issues with navigating the file directory of the profiles.yml file and dbt_project.yml file on the command line - I had to just brush up my CLI Knowledge
