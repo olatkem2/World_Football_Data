@@ -34,5 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   World_Football_Data:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    mart:
+      +materialized: table
+    staging:
       +materialized: view

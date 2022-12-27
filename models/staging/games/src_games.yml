@@ -1,0 +1,6 @@
+version: 2
+
+sources: 
+  - name: world_football_data
+    database: world_football_data
+    schema: games
