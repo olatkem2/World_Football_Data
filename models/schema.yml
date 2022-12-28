@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: stg_appearances
+    description: Sample Staged appearances data from transfer market.
+    columns: 
+      - name: appearance_id
+        description: The primary key for appearances table.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_clubs
+    description: Sample Staged club data from transfer market.
+    columns:
+      - name: club_id
+        description: The primary key for club table.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_games
+    description: Sample Staged games data from transfer market.
+    columns:
+      - name: game_id
+        description: The primary key for games table.
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_competitions
+    description: Sample Staged competitions data from transfer market.
+    columns:
+      - name: competitions_id
+        description: The primary key for competitions table.
+        tests:
+          - unique
+          - not_null
+
+      - name: type
+        description: "{{ doc('competitions_type') }}"
+        tests:
+          - accepted_values:
+              values:
+                - international_cup
+                - domestic_cup
+                - domestic_league
+                - other
+     
+  - name: stg_players
+    description: Sample Staged player data from transfer market.
+    columns:
+      - name: player_id
+        description: The primary key for players table.
+        tests:
+          - unique
+          - not_null
+      - name: position
+        description: "{{ doc('players_position') }}"
+        tests:
+          - accepted_values:
+              values:
+                - Attack
+                - Goalkeeper
+                - Defender
+                - Midfield
+
+  - name: stg_player_valuations
+    description: Sample Staged player valuations data from transfer market.
