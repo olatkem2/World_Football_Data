@@ -40,7 +40,7 @@ that can be done at the source. Also the ability to build in tests at the source
 ## A. Google Sheets <> Postgres - Data Platforms
 
 1. Navigate to kaggle using this link - [World Football Data](https://www.kaggle.com/datasets/davidcariboo/player-scores) to download the files.
-2. Create a workbook in google sheets and import a sample(say 5,000 rows for rows with more than 5,000 rows) seven(7) csv files in separate sheets. This is because Google sheet will start hanging teh momen you try to import the entire file(might be due to compute constraints).
+2. Create a workbook in google sheets and import a sample(say 5,000 rows for rows with more than 5,000 rows) seven(7) csv files in separate sheets. This is because Google sheet will start hanging the moment you try to import the entire file(might be due to compute constraints).
 
 ## B. Airbyte - Data Loader(EL Tool)
 
@@ -71,7 +71,7 @@ that can be done at the source. Also the ability to build in tests at the source
 15. You can also publish to your preferred git vendor
 16. Adjust VS code settings so dbt can accommodate the jinja-sql format - key: *.sql  value: jinja-sql  Search for "Association"
 17. Select Python Interpreter by Opening Command Pallete in VS code and selecting the right Python Interpreter
-18. Some common dbt command include  <br>
+18. Some useful dbt command include  <br>
     - dbt docs generate: To load the documentation in a manifest.json format  <br>
     - dbt docs serve: To initiate in a local server  <br>
     - dbt run  <br>
@@ -80,6 +80,7 @@ that can be done at the source. Also the ability to build in tests at the source
     - dbt seeds  <br>
     - dbt debug  <br>
     - dbt --version <br>
+    - dbt run -m models\staging\appearances\stg_appearances.sql  - To run specific models <br>
 19. Determine and map out the folder/directory naming convention and files naming convention.
 20. Start building your source files in yml file format in your models directory i.e source.yml and schema.yml files
 21. Determine the Data Modelling Methodology. Basic data cleansing and transformations were perfomred here
