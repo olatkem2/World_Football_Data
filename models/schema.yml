@@ -31,7 +31,7 @@ models:
   - name: stg_competitions
     description: Sample Staged competitions data from transfer market.
     columns:
-      - name: competitions_id
+      - name: competition_id
         description: The primary key for competitions table.
         tests:
           - unique
