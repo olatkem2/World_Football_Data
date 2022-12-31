@@ -96,14 +96,33 @@ that can be done at the source. Also the ability to build in tests at the source
 
 ## E. Power BI - Dashboarding(insights)
 
-1. 
+1. Create and name a new Power BI file using Power BI Desktop
+2. Connect to Postgres by using the entering the server_name(localhost) and database_name(world_football_data)
+3. Enter the Username and password of the master_user
+4.
 
 ## All in One View - dbt exposures beauty
 
 
 
-## F. Challenges
+## F. Airflow Installation in Docker
+1. Create a folder in your local directory - mkdir airflow-docker(This can be represented by any other name)
+2. change into that directory - cd airflow-docker
+3. Navigate to [Airflow website](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html), copy and run the docker-compose.yaml file in the terminal
+4. Open the docker-compose.yaml file and <br>
+    - Change the celeryExecuto to LocalExecutor <br>
+    - Delete celery reult backend and celery broker url <br>
+    - Delete redis dependencies and definitions <br>
+    - Delete celery worker and flower <br>
+    - Create foler for dags, logs and plugins - >mkdir dags logs plugins (for windows) <br>
+    - Init airfow database - docker compose up airflow-init This will download all necessary docker images and admin user with airfow as username and password <br>
+    - Run airfow with - docker-compose up -d  (d meaning in detached/background mode) <br>
+    - Check the containers running with - docker ps <br>
+    - Wait for few minutes for it to initialize and Navigate to localhost:8080 on your browser. Use 'airflow' as both username and password
+
+## G. Challenges
 
 1. I had to work on the profiles.yml file specifically for postgres. I was getting the credentials right but, I had to change METHOD to 'trust' in the hba.config file for psql via notepad and restart its postgresx64 services via run app(service.msc)
 2. Had issues with navigating the file directory of the profiles.yml file and dbt_project.yml file on the command line - I had to just brush CLI basics
 3. In dbt modelling, had to deal with data type conversion issues especially DATE type
+4. Datafold helped with Airflow Orchestration for the entire pipeline of Global Task Dependency/scheduling,Alerting and visualization [DataFold](https://www.datafold.com/blog/running-dbt-with-airflow)
