@@ -1,6 +1,6 @@
 select 
     url,
-    date,
+    to_date(date,'yyyy-mm-dd') as game_date,
     round,
     season,
     cast(game_id as int) as game_id,
