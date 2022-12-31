@@ -6,4 +6,4 @@ select *
     cast(Joined_Date as date) as joined_date */
 
 
-from {{  source('etl_airbyte_', 'club_games') }}
+from {{  source('etl_airbyte_raw', 'club_games') }}

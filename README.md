@@ -81,6 +81,8 @@ that can be done at the source. Also the ability to build in tests at the source
     - dbt debug  <br>
     - dbt --version <br>
     - dbt run -m models\staging\appearances\stg_appearances.sql  - To run specific models <br>
+    - dbt source snapshot-freshness - To run freshness test as configured in your source or model files. Be mindful of Timezones your EL Tool is using and align with dbt (UTC)
+    - dbt debug --target prod - To test connection switch betweeen dev and prod environments as configured in your profiles.yml file
 19. Determine and map out the folder/directory naming convention and files naming convention.
 20. Start building your source files in yml file format in your models directory i.e source.yml and schema.yml files
 21. Determine the Data Modelling Methodology. Basic data cleansing and transformations were perfomred here
@@ -104,3 +106,4 @@ that can be done at the source. Also the ability to build in tests at the source
 
 1. I had to work on the profiles.yml file specifically for postgres. I was getting the credentials right but, I had to change METHOD to 'trust' in the hba.config file for psql via notepad and restart its postgresx64 services via run app(service.msc)
 2. Had issues with navigating the file directory of the profiles.yml file and dbt_project.yml file on the command line - I had to just brush CLI basics
+3. In dbt modelling, had to deal with data type conversion issues especially DATE type

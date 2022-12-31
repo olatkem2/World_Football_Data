@@ -1,9 +1,16 @@
-select *
-   /* Customer_ID as customer_id,
-    First_Name as first_name,
-    Last_Name as last_name,
-    Gender as gender,
-    cast(Joined_Date as date) as joined_date */
+select 
+    url,
+    name,
+    type,
+    sub_type,
+    cast(country_id as int) as country_id,
+    pretty_name,
+    country_name,
+    confederation,
+    competition_id,
+    country_latitude,
+    country_longitude,
+    domestic_league_code
+from {{  source('etl_airbyte_raw', 'competitions') }}
 
 
-from {{  source('etl_airbyte_', 'competitions') }}
