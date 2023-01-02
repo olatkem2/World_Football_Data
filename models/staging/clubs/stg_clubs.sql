@@ -11,5 +11,5 @@ select
     cast(total_market_value as dec) as total_market_value,
     cast(foreigners_percentage as dec) as foreigners_percentage,
     cast(national_team_players as int) as national_team_players,
-    domestic_competition_id
+    domestic_competition_id as competition_id
 from {{  source('etl_airbyte_raw', 'clubs') }}

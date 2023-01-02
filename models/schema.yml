@@ -18,6 +18,12 @@ models:
         tests:
           - unique
           - not_null
+      - name: domestic_competition_id
+        description: This is a foreign key to the competitions table.
+        tests:
+          - relationships:
+              to: ref('stg_competitions')
+              field: competition_id
 
   - name: stg_games
     description: Sample Staged games data from transfer market.

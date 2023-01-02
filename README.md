@@ -23,6 +23,7 @@ The dataset is composed of multiple CSV files loaded into Google sheet with info
 6. Git and Github: This is our version control tool to enable collaboration and seamless CI[continuous Integration].
 7. VS Code: This is our Integrated Development Environment, IDE where we can initiate our virtual environment in the terminal and easily make changes to a cloned branch of our project,commit and merge.
 8. Power BI: This is our Business Intelligence Layer to tell story in digestible form coming as insights.
+9. Airflow/Shipyard/Github Actions: I will decide which to use for orchestration during the project. 
 
 I will not cover the installation and config steps for the listed tools as I have already done so in my previous project, click the link above.
 
@@ -119,6 +120,8 @@ that can be done at the source. Also the ability to build in tests at the source
     - Run airfow with - docker-compose up -d  (d meaning in detached/background mode) <br>
     - Check the containers running with - docker ps <br>
     - Wait for few minutes for it to initialize and Navigate to localhost:8080 on your browser. Use 'airflow' as both username and password
+    - Install a local version of apache-airflow apart from the docker version so you can easily write dags in vs code - pip install "apache-airflow[celery]==2.5.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.0/constraints-3.7.txt"
+    - 
 
 ## G. Challenges
 
