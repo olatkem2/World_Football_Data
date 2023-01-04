@@ -1,4 +1,4 @@
-![world_football_data_image](C:\Users\KAYODE PC\Desktop\github\World Football Data\World_Football_Data\images\World_Football_Data.JPG)
+![world_football_data_image](https://github.com/olatkem2/World_Football_Data/blob/master/images/World_Football_Data.JPG)
 
 # World-Football-Data
 A Modern Data Stack project with the aim of building and configuring a data pipeline that ingest data from source to destination,  create version controlled transformations, testing, deployment, documentation and delivering insights.
