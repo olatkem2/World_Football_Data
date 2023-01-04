@@ -18,7 +18,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: domestic_competition_id
+      - name: competition_id
         description: This is a foreign key to the competitions table.
         tests:
           - relationships:

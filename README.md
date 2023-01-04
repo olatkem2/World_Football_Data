@@ -1,3 +1,5 @@
+![world_football_data_image](C:\Users\KAYODE PC\Desktop\github\World Football Data\World_Football_Data\images\World_Football_Data.JPG)
+
 # World-Football-Data
 A Modern Data Stack project with the aim of building and configuring a data pipeline that ingest data from source to destination,  create version controlled transformations, testing, deployment, documentation and delivering insights.
 
@@ -120,8 +122,9 @@ that can be done at the source. Also the ability to build in tests at the source
     - Run airfow with - docker-compose up -d  (d meaning in detached/background mode) <br>
     - Check the containers running with - docker ps <br>
     - Wait for few minutes for it to initialize and Navigate to localhost:8080 on your browser. Use 'airflow' as both username and password
-    - Install a local version of apache-airflow apart from the docker version so you can easily write dags in vs code - pip install "apache-airflow[celery]==2.5.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.0/constraints-3.7.txt"
-    - 
+    - Create a virtual environment and Install apache-airflow apart from the docker version so you can easily write dags in vs code - pip install "apache-airflow[celery]==2.5.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.0/constraints-3.7.txt"
+    - Install posgtres provider using - pip install apache-airflow-providers-postgres
+    - Install google provider using - pip install apache-airflow-providers-google
 
 ## G. Challenges
 
