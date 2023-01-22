@@ -1,11 +1,11 @@
 with clubs as (
 
-    select * from "world_football_data"."dbt_olatkem_dev"."stg_clubs"
+    select * from {{ ref('stg_clubs' )}}
 
 ),
     competitions as (
 
-    select * from "world_football_data"."dbt_olatkem_dev"."stg_competitions"
+    select * from {{ ref('stg_competitions') }}
 
 )
 

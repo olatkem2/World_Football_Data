@@ -4,6 +4,7 @@ sources:
   - name: etl_airbyte_raw
     database: world_football_data
     schema: etl_airbyte_raw
+    loader: airbyte
     tables:
       - name: appearances
         loaded_at_field: _airbyte_emitted_at

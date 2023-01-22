@@ -117,7 +117,7 @@ that can be done at the source. Also the ability to build in tests at the source
     - Delete celery reult backend and celery broker url <br>
     - Delete redis dependencies and definitions <br>
     - Delete celery worker and flower <br>
-    - Create foler for dags, logs and plugins - >mkdir dags logs plugins (for windows) <br>
+    - Create folder for dags, logs and plugins - >mkdir dags logs plugins (for windows) <br>
     - Init airfow database - docker compose up airflow-init This will download all necessary docker images and admin user with airfow as username and password <br>
     - Run airfow with - docker-compose up -d  (d meaning in detached/background mode) <br>
     - Check the containers running with - docker ps <br>
@@ -125,10 +125,14 @@ that can be done at the source. Also the ability to build in tests at the source
     - Create a virtual environment and Install apache-airflow apart from the docker version so you can easily write dags in vs code - pip install "apache-airflow[celery]==2.5.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.0/constraints-3.7.txt"
     - Install posgtres provider using - pip install apache-airflow-providers-postgres
     - Install google provider using - pip install apache-airflow-providers-google
+    - create a dag for airbyte Extract and Load process (ChatGPT) can help with the initial python code and give it a descriptive name.
+    - create a connection on your local airflow instance for airbyte extract and load process with the following 
+    - connection_id: gsheet-postgres, connection_type: airbyte login: airflow password: airflow host: gateway_address of airflow-web-server(how to: copy the container id and write 'docker inspect container_id' and locate the gateway_addresss and port) port: same process as in above. You can better still get the host from this airbyte [documentation](https://docs.airbyte.com/troubleshooting/new-connection/). HOST: host.docker.internal  PORT: 8001  to avoid connection refused errors. 
+    - 
 
 ## G. Challenges
 
-1. I had to work on the profiles.yml file specifically for postgres. I was getting the credentials right but, I had to change METHOD to 'trust' in the hba.config file for psql via notepad and restart its postgresx64 services via run app(service.msc)
+1. I had to work on the profiles.yml file specifically for postgres. I was getting the credentials right but, I had to change METHOD to 'trust' in the pg_hba.config file for psql via notepad and restart its postgresx64 services via run app(service.msc)
 2. Had issues with navigating the file directory of the profiles.yml file and dbt_project.yml file on the command line - I had to just brush CLI basics
 3. In dbt modelling, had to deal with data type conversion issues especially DATE type
 4. Datafold helped with Airflow Orchestration for the entire pipeline of Global Task Dependency/scheduling,Alerting and visualization [DataFold](https://www.datafold.com/blog/running-dbt-with-airflow)
